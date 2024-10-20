@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=75.1"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "healthy-life-site"
+version = "0.0.0.1"
+description = "The site that combines a pharmacy and health-related blogs."
+requires-python = ">=3.12"
+
+dependencies = [
+  "Django == 5.1.2",
+  "Pillow == 11.0.0",
+  "django-debug-toolbar == 4.4.6",
+  "python-dotenv == 1.0.1",
+  "pytest == 8.3.3",
+  "pytest-mock == 3.14.0",
+  "pytest-asyncio == 0.24.0",
+  "pytest-django == 4.9.0",
+]
+
+[tool.distutils.egg_info]
+egg_base = "."
+
+[tool.pytest.ini_options]
+DJANGO_SETTINGS_MODULE = "healthy_life_site.healthy_life_site.settings"
+addopts = "-v"
+testpaths = [
+
+]
+filterwarnings = ["ignore::DeprecationWarning" ]
+console_output_style = "count"
+minversion = "8.3.3"
